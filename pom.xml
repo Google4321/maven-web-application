@@ -21,9 +21,9 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.127.206.255:9000/</sonar.host.url>
-		<sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password>
+		<sonar.host.url>http://13.126.30.115:9000/</sonar.host.url>
+		<sonar.login>fa43bd5f54d2bc9ea3a99a9f522f5f23ebca3449</sonar.login>
+		<!-- <sonar.password>admin</sonar.password>  -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Maven Web App Release</name>
-	      <url>http://13.233.238.136:8081/repository/Java_Web_App_Release/</url>
+	      <url>http://15.206.205.90:8081/repository/Filkart_realase/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Maven Web App Snapshot </name>
-	      <url>http://13.233.238.136:8081/repository/Java_Web-App_Snapshot/</url>
+	      <name>Maven Web App Snapshot</name>
+	      <url>http://15.206.205.90:8081/repository/Flikart_snapshort/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
