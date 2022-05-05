@@ -1,0 +1,37 @@
+node
+{
+    def mavenhome= tool name : "maven_3.8.5"
+    stage('checkgithub')
+    {
+         git credentialsId: 'Git_HUB_login-kommaramabeem', url: 'https://github.com/Google4321/maven-web-application.git'
+    }
+    stage('bulid')
+    {
+        sh "${mavenhome}/bin/mvn package"
+    }
+    stage('test')
+    {
+        sh "${mavenhome}/bin/mvn sonar:sonar"
+    }
+    stage('storeage')
+    {
+        sh "${mavenhome}/bin/mvn deploy"
+    }
+    stage('deploy to tomcat')
+    {
+        sshagent(['633bad3e-d0e6-4b83-9996-dacddd1f6044']) 
+        {
+          sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/script_project_2/target/maven-web-application.war ec2-user@3.109.153.85:/opt/apache-tomcat-9.0.62/webapps"
+            
+        }
+    }
+    stage('email notification')
+    {
+        
+        emailext body: '''pipeline project bulid over
+
+
+Regards,
+bulid project by script way''', subject: 'script way running', to: 'sidhu@12309@gmail.com'
+    }
+}
